@@ -1,8 +1,8 @@
 'use strict';
 
 function compute_chain_median(collection) {
-  var chainArr = collection.split("->");
-  var chainNumArr = chainArr.map(Number);
+  let chainArr = collection.split("->");
+  let chainNumArr = chainArr.map(Number);
   return compute_median(chainNumArr);
 }
 
@@ -17,7 +17,7 @@ function compute_median(collection) {
   return average;
 }
 
-const rankAsc = function (a, b) {
+function rankAsc(a, b) {
   return b - a;
 }
 

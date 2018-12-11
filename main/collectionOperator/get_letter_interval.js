@@ -1,18 +1,25 @@
 'use strict';
 
 function get_letter_interval(number_a, number_b) {
-  var leftInterval = Math.min(number_a, number_b);
-  var rightInterval = Math.max(number_a, number_b);
-  var letterArray = [];
+  let codeArray = get_integer_interval(number_a, number_b)
+  return codeArray.map(codeToLetter);
+}
+
+function codeToLetter(code) {
+  return String.fromCharCode(97 + code - 1);
+}
+
+function get_integer_interval(number_a, number_b) {
+  let leftInterval = Math.min(number_a, number_b);
+  let rightInterval = Math.max(number_a, number_b);
+  let integerArray = [];
   for (leftInterval; leftInterval <= rightInterval; leftInterval++) {
-    var code = 97 + leftInterval - 1;
-    var letter = String.fromCharCode(code);
-    letterArray.push(letter);
+    integerArray.push(leftInterval);
   }
   if (number_a > number_b) {
-    letterArray.reverse();
+    integerArray.reverse();
   }
-  return letterArray;
+  return integerArray;
 }
 
 module.exports = get_letter_interval;

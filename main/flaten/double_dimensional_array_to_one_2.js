@@ -1,18 +1,20 @@
 'use strict';
 
 function double_to_one(collection) {
-  var flattened = collection.reduce(
-    function (accumulator, currentValue) {
-      return accumulator.concat(currentValue);
-    }, []);
-  return choose_no_repeat_number(flattened);
+  let oneDimension = collection.reduce(toConcatArr, []);
+  return choose_no_repeat_number(oneDimension);
+}
+
+function toConcatArr(accumulator, currentValue) {
+  return accumulator.concat(currentValue);
 }
 
 function choose_no_repeat_number(collection) {
-  var noRepeatArr = collection.filter(function (element, index, array) {
-    return array.indexOf(element) === index;
-  });
-  return noRepeatArr;
+  return collection.filter(noRepeat);
+}
+
+function noRepeat(element, index, array) {
+  return array.indexOf(element) === index;
 }
 
 module.exports = double_to_one;

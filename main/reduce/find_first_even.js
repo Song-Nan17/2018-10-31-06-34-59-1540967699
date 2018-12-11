@@ -4,7 +4,7 @@ function find_first_even(collection) {
   return collection.find(even);
 }
 
-const even = function (num) {
+function even(num) {
   return num % 2 == 0;
 }
 
