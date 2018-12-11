@@ -1,8 +1,11 @@
 'use strict';
 
 function double_to_one(collection) {
-
-  //在这里写入代码
+  var flattened = collection.reduce(
+    function (accumulator, currentValue) {
+      return accumulator.concat(currentValue);
+    }, []);
+  return flattened;
 }
 
 module.exports = double_to_one;
