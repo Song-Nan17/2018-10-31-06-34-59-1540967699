@@ -1,7 +1,10 @@
 'use strict';
 
 function collect_min_number(collection) {
-  //在这里写入代码
+  return collection.reduce(minNumber);
+}
+var minNumber = function (min,current) {
+  return Math.min(min,current);
 }
 
 module.exports = collect_min_number;
