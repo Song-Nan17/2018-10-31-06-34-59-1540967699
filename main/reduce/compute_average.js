@@ -4,7 +4,7 @@ function compute_average(collection) {
   return collection.reduce(sumArr) / collection.length;
 }
 
-const sumArr = function (accumulator, currentValue) {
+function sumArr(accumulator, currentValue) {
   return accumulator + currentValue;
 }
 
