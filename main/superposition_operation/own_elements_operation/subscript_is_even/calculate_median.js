@@ -1,7 +1,7 @@
 'use strict';
 var calculate_median = function (collection) {
   let evenSubArr = collectNumEvenEle(collection);
-  return compute_median(evenSubArr);
+  return calculateMedian(evenSubArr);
 };
 
 function collectNumEvenEle(collection) {
@@ -13,7 +13,7 @@ function isNumEven(element, index) {
   }
 }
 
-function compute_median(collection) {
+function calculateMedian(collection) {
   let average, length = collection.length;
   if (length % 2 == 0) {
     average = (collection[length / 2] + collection[length / 2 - 1]) / 2;

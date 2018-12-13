@@ -3,14 +3,14 @@ function create_updated_collection(collection_a, object_b) {
   let valueArr = object_b.value;
   const findSameAndMinusOne = function (obj) {
     if (valueArr.includes(obj.key)) {
-      obj.count -= subStrachend(obj.count);
+      obj.count -= minusOneEveryThree(obj.count);
     }
     return obj;
   }
   return collection.map(findSameAndMinusOne);
 }
 
-function subStrachend(num) {
+function minusOneEveryThree(num) {
   return Math.floor(num / 3);
 }
 

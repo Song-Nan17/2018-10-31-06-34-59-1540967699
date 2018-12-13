@@ -1,9 +1,9 @@
 'use strict';
 var rank_asc = function (collection) {
-  return collection.sort(rankAsc);
+  return collection.sort(rankDesc);
 };
 
-function rankAsc(a, b) {
+function rankDesc(a, b) {
   return b - a;
 }
 

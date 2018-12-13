@@ -7,18 +7,22 @@ function compute_chain_median(collection) {
 }
 
 function compute_median(collection) {
-  var rankAscArr = collection.sort(rankAsc);
-  var average, length = rankAscArr.length;
+  let rankAscArr = collection.sort(rankAsc);
+  return calculateMedian(rankAscArr);
+}
+
+function calculateMedian(collection) {
+  let median, length = collection.length;
   if (length % 2 == 0) {
-    average = (rankAscArr[length / 2] + rankAscArr[length / 2 - 1]) / 2;
+    median = (collection[length / 2] + collection[length / 2 - 1]) / 2;
   } else {
-    average = rankAscArr[(length - 1) / 2];
+    median = collection[(length - 1) / 2];
   }
-  return average;
+  return median;
 }
 
 function rankAsc(a, b) {
-  return b - a;
+  return a - b;
 }
 
 module.exports = compute_chain_median;

@@ -1,10 +1,10 @@
 'use strict';
 
 var map_to_four_multiples_add_one = function (collection) {
-  return collection.map(fourfoldPlusOne);
+  return collection.map(fourMultiplesPlusOne);
 };
 
-function fourfoldPlusOne(ele) {
+function fourMultiplesPlusOne(ele) {
   return ele * 4 + 1;
 }
 

@@ -6,19 +6,17 @@ var even_group_calculate_average = function (collection) {
     return [0];
   } else {
     let groupArr = evenSubEvenArr.reduce(groupArray, [[], [], []]);
-    return averageArrayAndRemoveEmpty(groupArr);
+    let averageArray = groupArr.map(averageArrayAndRemoveEmpty, []);
+    return double_to_one(averageArray);
   }
 };
 
-function averageArrayAndRemoveEmpty(collection) {
-  let averageArray = [];
-  for (let i = 0; i < collection.length; i++) {
-    if (collection[i].length !== 0) {
-      let average = compute_average(collection[i]);
-      averageArray.push(average);
-    }
+function averageArrayAndRemoveEmpty(eleArr) {
+  if (eleArr.length !== 0) {
+    let average = compute_average(eleArr);
+    return average;
   }
-  return averageArray;
+  return eleArr;
 }
 
 function compute_average(collection) {
@@ -60,6 +58,14 @@ function collect_all_even(collection) {
 }
 function isEven(element) {
   return element % 2 == 0;
+}
+
+function double_to_one(collection) {
+  return collection.reduce(toConcatArr, []);
+}
+
+function toConcatArr(accumulator, currentValue) {
+  return accumulator.concat(currentValue);
 }
 
 module.exports = even_group_calculate_average;

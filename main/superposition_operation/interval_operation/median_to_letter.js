@@ -1,18 +1,18 @@
 'use strict';
 
 function median_to_letter(collection) {
-  let code = Math.ceil(compute_median(collection));
+  let code = Math.ceil(calculateMedian(collection));
   return codeToLetter(code);
 }
 
-function compute_median(collection) {
-  let average, length = collection.length;
+function calculateMedian(collection) {
+  let median, length = collection.length;
   if (length % 2 == 0) {
-    average = (collection[length / 2] + collection[length / 2 - 1]) / 2;
+    median = (collection[length / 2] + collection[length / 2 - 1]) / 2;
   } else {
-    average = collection[(length - 1) / 2];
+    median = collection[(length - 1) / 2];
   }
-  return average;
+  return median;
 }
 
 function codeToLetter(code) {
