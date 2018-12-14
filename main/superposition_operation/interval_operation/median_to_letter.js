@@ -6,13 +6,10 @@ function median_to_letter(collection) {
 }
 
 function calculateMedian(collection) {
-  let median, length = collection.length;
-  if (length % 2 == 0) {
-    median = (collection[length / 2] + collection[length / 2 - 1]) / 2;
-  } else {
-    median = collection[(length - 1) / 2];
-  }
-  return median;
+  let medianLeftSub = Math.floor((collection.length - 1) / 2);
+  let medianRightSub = Math.ceil((collection.length - 1) / 2);
+  let doubleMedian = collection[medianLeftSub] + collection[medianRightSub];
+  return doubleMedian / 2;
 }
 
 function codeToLetter(code) {

@@ -14,12 +14,9 @@ function isNumEven(element, index) {
 }
 
 function calculateMedian(collection) {
-  let average, length = collection.length;
-  if (length % 2 == 0) {
-    average = (collection[length / 2] + collection[length / 2 - 1]) / 2;
-  } else {
-    average = collection[(length - 1) / 2];
-  }
-  return average;
+  let medianLeftSub = Math.floor((collection.length - 1) / 2);
+  let medianRightSub = Math.ceil((collection.length - 1) / 2);
+  let doubleMedian = collection[medianLeftSub] + collection[medianRightSub];
+  return doubleMedian / 2;
 }
 module.exports = calculate_median;

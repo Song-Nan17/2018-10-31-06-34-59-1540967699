@@ -1,22 +1,17 @@
 'use strict';
 
 function compute_median(collection) {
-  let rankAscArr = collection.sort(rankAsc);
-  return calculateMedian(rankAscArr);
+  let rankAscArr = rankAsc(collection);
+  let medianLeftSub = Math.floor((rankAscArr.length - 1) / 2);
+  let medianRightSub = Math.ceil((rankAscArr.length - 1) / 2);
+  let doubleMedian = rankAscArr[medianLeftSub] + rankAscArr[medianRightSub];
+  return doubleMedian / 2;
 }
 
-function calculateMedian(collection) {
-  let median, length = collection.length;
-  if (length % 2 == 0) {
-    median = (collection[length / 2] + collection[length / 2 - 1]) / 2;
-  } else {
-    median = collection[(length - 1) / 2];
-  }
-  return median;
-}
-
-function rankAsc(a, b) {
-  return a - b;
+function rankAsc(collection) {
+  return collection.sort(function (a, b) {
+    return a - b;
+  });
 }
 
 module.exports = compute_median;
